@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\ActionsButtons\AddButton.png" />
+    <None Remove="Resources\ActionsButtons\Delete.png" />
+    <None Remove="Resources\Assets\Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\ActionsButtons\AddButton.png" />
+    <Resource Include="Resources\ActionsButtons\Delete.png" />
+    <Resource Include="Resources\Assets\Logo.png" />
+  </ItemGroup>
+
+</Project>

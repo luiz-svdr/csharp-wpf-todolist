@@ -1,24 +1,17 @@
-﻿using System.Text;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MyToDoList
 {
-    // <summary>
-    // Interaction logic for MainWindow.xaml
-    // </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<TaskItem> Tasks { get; set; } = new ObservableCollection<TaskItem>();
+
         public MainWindow()
         {
             InitializeComponent();
+            TaskListControl.ItemsSource = Tasks;
         }
 
         private void BtnAddTask_Click(object sender, RoutedEventArgs e)
@@ -26,14 +19,24 @@ namespace MyToDoList
             var newTaskWindow = new AddTaskWindow();
             newTaskWindow.Owner = this;
             newTaskWindow.ShowDialog();
+
             string taskText = newTaskWindow.NewTask;
 
-            //TaskDisplay.Text = taskText;
+            if (!string.IsNullOrWhiteSpace(taskText))
+            {
+                Tasks.Add(new TaskItem { Description = taskText });
+            }
         }
 
         private void DeleteTask_Click(object sender, RoutedEventArgs e)
         {
+            var btnClicked = sender as Button;
+            var taskToRemove = btnClicked.CommandParameter as TaskItem;
 
+            if (taskToRemove != null)
+            {
+                Tasks.Remove(taskToRemove);
+            }
         }
     }
 }

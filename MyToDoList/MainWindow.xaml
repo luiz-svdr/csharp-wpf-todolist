@@ -20,7 +20,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -35,10 +35,29 @@
                Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4"/>
         <Button x:Name="AddTask" Click="BtnAddTask_Click"
                 Style="{StaticResource AddTaskButtonStyle}"                
-                Grid.Column="3" Grid.Row="3" Margin="-5,0,0,0"/>
-        <Button x:Name="DeleteTask" Click="DeleteTask_Click"
-                Style="{StaticResource DeleteButtonStyle}"                
-                Grid.Column="4" Grid.Row="3"/>
+                Grid.Column="3" Grid.Row="2" Margin="-5,0,0,0"/>
+        <ItemsControl x:Name="TaskListControl"
+              Grid.Row="3" Grid.RowSpan="9" Grid.Column="3">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0" Style="{StaticResource TaskPanelBorderStyle}">
+                            <TextBlock Text="{Binding Description}" Style="{StaticResource TaskPanelTextBlockStyle}"/>
+                        </Border>
+
+                        <Button Grid.Column="1" Style="{StaticResource DeleteButtonStyle}"
+                        Click="DeleteTask_Click"
+                        CommandParameter="{Binding}"/>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
 
     </Grid>
 </Window>

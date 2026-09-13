@@ -14,13 +14,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="AddTaskTextBox"
-         Style="{StaticResource RoundedTextBoxStyle}"
-         Tag="Type your ToDo activity..."
-         Foreground="Black" 
-         Width="680" Height="100"
-         Background="#BDD8E9" BorderBrush="#0A4174"
-         VerticalAlignment="Top" Margin="5" />
+        <TextBox x:Name="AddTaskTextBox" Style="{StaticResource RoundedTextBoxStyle}"/>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>

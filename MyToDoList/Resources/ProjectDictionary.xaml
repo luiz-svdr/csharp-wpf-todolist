@@ -9,6 +9,14 @@
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="AcceptsReturn" Value="True"/>
         <Setter Property="MaxLength" Value="125"/>
+        <Setter Property="Tag" Value="Type your ToDo activity..."/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="#BDD8E9"/>
+        <Setter Property="BorderBrush" Value="#0A4174"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Width" Value="680"/>
+        <Setter Property="Height" Value="100"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
@@ -36,6 +44,27 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+    
+    <Style x:Key="TaskPanelTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="#BDD8E9"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Visibility" Value="Visible"/>
+    </Style>
+
+    <Style x:Key="TaskPanelBorderStyle" TargetType="Border">
+        <Setter Property="BorderBrush" Value="#0A4174"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Background" Value="#BDD8E9"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Height" Value="80"/>
     </Style>
 
     <Style x:Key="LogoImageStyle" TargetType="Image">
@@ -74,6 +103,7 @@
         <Setter Property="Width" Value="30"/>
         <Setter Property="Height" Value="30"/>
         <Setter Property="ToolTip" Value="Delete Task"/>
+        <Setter Property="Margin" Value="15,0,0,0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">

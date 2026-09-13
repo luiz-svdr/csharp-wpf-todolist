@@ -1,8 +1,13 @@
-C# WPF To Do List
-Projeto de estudo em C# (.NET/WPF): uma aplicação de lista de tarefas para desktop. A lógica de funcionamento é implementada em C#, enquanto a interface é construída em WPF/XAML.
-Tecnologias
+# C# WPF To Do List
+
+A study project in C# (.NET/WPF): a desktop to-do list application. Application logic is implemented in C#, while the interface is built with WPF/XAML.
+
+## Technologies
+
 C#, .NET, WPF, XAML.
-Estrutura
+
+## Structure
+
 ```
 MyToDoList/
 ├── Models/
@@ -15,10 +20,17 @@ MyToDoList/
 ├── App.xaml
 ├── MainWindow.xaml
 ```
-Funcionalidades
-Cadastro de tarefas por meio de uma janela modal (AddTaskWindow), com validação do campo de texto (Services/NewTaskAdditionValidation) e comunicação de dados entre janelas via propriedade pública.
-Listagem dinâmica de tarefas com ObservableCollection<TaskItem> e um ItemsControl com DataTemplate, exibindo cada tarefa como um card (Border + TextBlock) com botão de remoção, sem repetição manual de elementos no XAML.
-Estilos customizados (TextBox arredondado com placeholder simulado, botões com imagem e efeitos de hover, cards de tarefa) centralizados em ResourceDictionaries próprios.
-Próximas etapas
-Marcar tarefas como concluídas, persistência em arquivo e futura migração para MVVM.
-Projeto em desenvolvimento contínuo como estudo de C# e WPF.
+
+## Features
+
+Task creation through a modal window (AddTaskWindow), with input validation (Services/NewTaskAdditionValidation) and data communication between windows via a public property.
+
+Dynamic task listing using ObservableCollection<TaskItem> and an ItemsControl with a DataTemplate, displaying each task as a card (Border + TextBlock) with a delete button, without manually repeating elements in XAML.
+
+Custom styles (rounded TextBox with simulated placeholder, image-based buttons with hover effects, task cards) centralized in dedicated ResourceDictionaries.
+
+## Next steps
+
+Marking tasks as completed, file persistence, and a future migration to MVVM.
+
+Project under continuous development as a C# and WPF study exercise.
